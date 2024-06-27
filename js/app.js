@@ -60,7 +60,9 @@ function addNewToCart(name, tags, price) {
 }
 
 function updateTotalAndQuantity() {
-  document.getElementById("cart-total").innerHTML = cartTotal;
+  document
+    .querySelectorAll(".cart__total")
+    .forEach((element) => (element.innerHTML = cartTotal));
   document.getElementById("cart-quantity").innerHTML = cartQuantity;
 
   localStorage.setItem("cart", JSON.stringify(cartItems));
