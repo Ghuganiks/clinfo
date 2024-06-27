@@ -1,0 +1,274 @@
+<!doctype html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js"></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" -25,
+          "opsz" 48;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="modal-container modal-container-info" id="enroll-modal">
+      <div class="modal-info">
+        <h5 class="modal-info__heading">Готово, вы записались на очистку</h5>
+        <span class="modal-info__text"
+          >Желаете пройти процедуру сейчас или позднее?</span
+        >
+        <a
+          class="modal-info__button now"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://ghuganiks.github.io/"
+          >Сейчас</a
+        >
+        <button class="modal-info__button later">Позднее</button>
+      </div>
+    </div>
+    <div class="modal-container modal-container-info" id="payment-modal">
+      <div class="modal-info">
+        <h5 class="modal-info__heading">Ваш заказ оплачен!</h5>
+        <span class="modal-info__text"
+          >Вы сможете забрать его на ресепшене в центре CLINFO</span
+        >
+        <button class="modal-info__button" id="payment-modal-close">
+          Готово
+        </button>
+      </div>
+    </div>
+    <div class="modal-container modal-container-cart" id="cart-modal">
+      <div class="cart modal">
+        <div class="cart__header">
+          <h5>Корзина</h5>
+          <button class="cart__close" onclick="toggleCart();">Закрыть</button>
+        </div>
+        <div class="cart__items"></div>
+        <div class="cart__footer">
+          <div class="cart__summary">
+            <span>Всего:</span><span><span id="cart-total">24</span> IC</span>
+          </div>
+          <button onclick="pay();" class="cart__pay">Перейти к оплате</button>
+          <span class="cart__description"
+            >* Средства спишутся с вашего id сотрудника</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container" id="container">
+      <main>
+        <p class="products__description">
+          * IC (InfoCoin) - валюта CLINFO. Каждый сотрудник получает
+          ограниченное количество валюты для покупки формы
+        </p>
+        <div class="products">
+          <div class="product">
+            <div class="product__header">
+              <div class="product__tags">
+                <div class="product__tag">Кепка</div>
+              </div>
+              <div class="product__price">
+                <div class="product__ellipse"></div>
+                5 IC
+              </div>
+            </div>
+            <img
+              class="product__illustration"
+              src="./images/products/cap.png"
+              alt="cap"
+            />
+            <button
+              onclick="addNewToCart('Кепка', [], 5);"
+              class="product__button"
+            >
+              Купить
+            </button>
+          </div>
+          <div class="product">
+            <div class="product__header">
+              <div class="product__tags">
+                <div class="product__tag">Защитный комбинезон</div>
+                <div class="product__tag">Onesize</div>
+              </div>
+              <div class="product__price">
+                <div class="product__ellipse"></div>
+                15 IC
+              </div>
+            </div>
+            <img
+              class="product__illustration coat"
+              src="./images/products/coat.png"
+              alt="coat"
+            />
+            <button
+              onclick="addNewToCart('Защитный комбинезон', ['Onesize'], 15);"
+              class="product__button"
+            >
+              Купить
+            </button>
+          </div>
+          <div class="product">
+            <div class="product__header">
+              <div class="product__tags">
+                <div class="product__tag">Бутылка для воды</div>
+              </div>
+              <div class="product__price">
+                <div class="product__ellipse"></div>
+                4 IC
+              </div>
+            </div>
+            <img
+              class="product__illustration"
+              src="./images/products/bottle.png"
+              alt="bottle"
+            />
+            <button
+              class="product__button"
+              onclick="addNewToCart('Бутылка для воды', [], 4);"
+            >
+              Купить
+            </button>
+          </div>
+          <div class="product">
+            <div class="product__header">
+              <div class="product__tags">
+                <div class="product__tag">Защитный набор</div>
+                <div class="product__tag">Onesize</div>
+              </div>
+              <div class="product__price">
+                <div class="product__ellipse"></div>
+                12 IC
+              </div>
+            </div>
+            <img
+              class="product__illustration suit"
+              src="./images/products/suit.png"
+              alt="protective suit"
+            />
+            <button
+              onclick="addNewToCart('Защитный набор', ['Onesize'], 12);"
+              class="product__button"
+            >
+              Купить
+            </button>
+          </div>
+          <div class="product">
+            <div class="product__header">
+              <div class="product__tags">
+                <div class="product__tag">Футболка</div>
+                <div class="product__tag">Onesize</div>
+              </div>
+              <div class="product__price">
+                <div class="product__ellipse"></div>
+                3 IC
+              </div>
+            </div>
+            <img
+              class="product__illustration tshirt"
+              src="./images/products/tshirt.png"
+              alt="T-shirt"
+            />
+            <button
+              onclick="addNewToCart('Футболка', ['Onesize'], 3);"
+              class="product__button"
+            >
+              Купить
+            </button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="footer__logo">
+          <img src="./images/logo.svg" alt="logo" />
+          CLINFO
+        </div>
+        <button class="footer__action">
+          Записаться на очистку от отрицательной информации
+          <span class="material-symbols-outlined footer__action_arrow">
+            arrow_right_alt
+          </span>
+        </button>
+        <div class="footer__input">
+          <input placeholder="Email" />
+          <button onclick="enroll();">Записаться</button>
+        </div>
+      </footer>
+      <div class="nav__container">
+        <nav>
+          <div class="nav__header">
+            <a class="nav__logo" href="index.html">
+              <img src="./images/logo.svg" alt="logo" />
+            </a>
+            <button onclick="toggleCart();" class="nav__cart" id="cart-button">
+              Корзина (<span id="cart-quantity">0</span>)
+            </button>
+          </div>
+          <ul class="nav__items">
+            <li>
+              <a class="nav__item" href="about.html">
+                <h5 class="nav__item_number">01</h5>
+                О центре
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="merch.html">
+                <h5 class="nav__item_number">02</h5>
+                Униформа
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="faq.html">
+                <h5 class="nav__item_number">03</h5>
+                Руководство
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="meetings.html">
+                <h5 class="nav__item_number">04</h5>
+                Собрания
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="purging.html">
+                <h5 class="nav__item_number">05</h5>
+                Отчистка
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cart__container" id="cart-container">
+          <div class="cart" id="cart">
+            <div class="cart__header">
+              <h5>Корзина</h5>
+              <button class="cart__close" onclick="toggleCart();">
+                Закрыть
+              </button>
+            </div>
+            <div class="cart__items"></div>
+            <div class="cart__footer">
+              <div class="cart__summary">
+                <span>Всего:</span
+                ><span><span id="cart-total">24</span> IC</span>
+              </div>
+              <button class="cart__pay">Перейти к оплате</button>
+              <span class="cart__description"
+                >* Средства спишутся с вашего id сотрудника</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

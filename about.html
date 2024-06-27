@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js"></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" -25,
+          "opsz" 48;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="modal-container modal-container-info" id="enroll-modal">
+      <div class="modal-info">
+        <h5 class="modal-info__heading">Готово, вы записались на очистку</h5>
+        <span class="modal-info__text"
+          >Желаете пройти процедуру сейчас или позднее?</span
+        >
+        <a
+          class="modal-info__button now"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://ghuganiks.github.io/"
+          >Сейчас</a
+        >
+        <button class="modal-info__button later">Позднее</button>
+      </div>
+    </div>
+    <div class="modal-container modal-container-info" id="payment-modal">
+      <div class="modal-info">
+        <h5 class="modal-info__heading">Ваш заказ оплачен!</h5>
+        <span class="modal-info__text"
+          >Вы сможете забрать его на ресепшене в центре CLINFO</span
+        >
+        <button class="modal-info__button" id="payment-modal-close">
+          Готово
+        </button>
+      </div>
+    </div>
+    <div class="modal-container modal-container-cart" id="cart-modal">
+      <div class="cart modal">
+        <div class="cart__header">
+          <h5>Корзина</h5>
+          <button class="cart__close" onclick="toggleCart();">Закрыть</button>
+        </div>
+        <div class="cart__items"></div>
+        <div class="cart__footer">
+          <div class="cart__summary">
+            <span>Всего:</span><span><span id="cart-total">24</span> IC</span>
+          </div>
+          <button onclick="pay();" class="cart__pay">Перейти к оплате</button>
+          <span class="cart__description"
+            >* Средства спишутся с вашего id сотрудника</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="container" id="container">
+      <div class="nav__container">
+        <nav>
+          <div class="nav__header">
+            <a class="nav__logo" href="index.html">
+              <img src="./images/logo.svg" alt="logo" />
+            </a>
+            <button onclick="toggleCart();" class="nav__cart" id="cart-button">
+              Корзина (<span id="cart-quantity">0</span>)
+            </button>
+          </div>
+          <ul class="nav__items">
+            <li>
+              <a class="nav__item" href="about.html">
+                <h5 class="nav__item_number">01</h5>
+                О центре
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="merch.html">
+                <h5 class="nav__item_number">02</h5>
+                Униформа
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="faq.html">
+                <h5 class="nav__item_number">03</h5>
+                Руководство
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="meetings.html">
+                <h5 class="nav__item_number">04</h5>
+                Собрания
+              </a>
+            </li>
+            <li>
+              <a class="nav__item" href="purging.html">
+                <h5 class="nav__item_number">05</h5>
+                Отчистка
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cart__container" id="cart-container">
+          <div class="cart" id="cart">
+            <div class="cart__header">
+              <h5>Корзина</h5>
+              <button class="cart__close" onclick="toggleCart();">
+                Закрыть
+              </button>
+            </div>
+            <div class="cart__items"></div>
+            <div class="cart__footer">
+              <div class="cart__summary">
+                <span>Всего:</span
+                ><span><span id="cart-total">24</span> IC</span>
+              </div>
+              <button class="cart__pay">Перейти к оплате</button>
+              <span class="cart__description"
+                >* Средства спишутся с вашего id сотрудника</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <main>
+        <div class="article__container">
+          <h1 class="article__heading">О центре</h1>
+          <section>
+            <p>
+              Мы являемся фильтром для информации со всего мира и не должны
+              допускать утечек отрицательной информации, чтобы до людей доходила
+              только качественная и чистая информация.
+            </p>
+            <p>
+              Информации в мире стало слишком много и люди поняли,
+              что они больше не могут её контролировать. Отрицательная
+              информация начала превращаться в физическую материю, которая
+              способна физически взаимодействовать с людьми и творить зло.
+              Государства решили, что вся информация должна проходить
+              через фильтр и контроль. А отрицательная информация должна
+              уничтожаться. Так и появился на центр
+            </p>
+            <img
+              class="about__building-plan"
+              src="./images/about_building.png"
+              alt="Building plan"
+            />
+            <img
+              class="about__schema"
+              src="./images/about_schema.png"
+              alt="schema"
+            />
+          </section>
+        </div>
+        <div class="gallery">
+          <img
+            class="gallery__item gallery__item-1"
+            src="./images/gallery/1.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-2"
+            src="./images/gallery/2.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-3"
+            src="./images/gallery/3.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-4"
+            src="./images/gallery/4.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-5"
+            src="./images/gallery/5.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-6"
+            src="./images/gallery/6.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-7"
+            src="./images/gallery/7.png"
+            alt=""
+          />
+          <img
+            class="gallery__item gallery__item-8"
+            src="./images/gallery/8.png"
+            alt=""
+          />
+        </div>
+      </main>
+      <footer>
+        <div class="footer__logo">
+          <img src="./images/logo.svg" alt="logo" />
+          CLINFO
+        </div>
+        <button class="footer__action">
+          Записаться на очистку от отрицательной информации
+          <span class="material-symbols-outlined footer__action_arrow">
+            arrow_right_alt
+          </span>
+        </button>
+        <div class="footer__input">
+          <input placeholder="Email" />
+          <button onclick="enroll();">Записаться</button>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
