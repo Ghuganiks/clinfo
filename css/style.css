@@ -748,7 +748,7 @@ products__description {
 .planning__card.yearly {
   grid-area: 1 / 1 / 2 / 4;
   background: linear-gradient(var(--darken-color), var(--darken-color)),
-    url("../images/meetings.png");
+    url("../images/meetings_yearly.png");
   background-size: cover;
   transition: --darken-color 0.1s ease-in-out;
 }
@@ -759,7 +759,7 @@ products__description {
 .planning__card.quartal {
   grid-area: 1 / 4 / 2 / 8;
   background: linear-gradient(var(--darken-color), var(--darken-color)),
-    url("../images/merch_quartal.png");
+    url("../images/meetings_quartal.png");
   background-size: cover;
   transition: --darken-color 0.1s ease-in-out;
 }
@@ -774,7 +774,6 @@ products__description {
 }
 
 .poster {
-  height: fit-content;
   overflow: clip;
   border-radius: 16px;
 }
