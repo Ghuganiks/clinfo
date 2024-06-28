@@ -125,7 +125,9 @@
                 <span>Всего:</span
                 ><span><span class="cart__total">0</span> IC</span>
               </div>
-              <button class="cart__pay">Перейти к оплате</button>
+              <button onclick="pay();" class="cart__pay">
+                Перейти к оплате
+              </button>
               <span class="cart__description"
                 >* Средства спишутся с вашего id сотрудника</span
               >
@@ -135,21 +137,20 @@
       </div>
       <main>
         <div class="cards">
-          <div class="card about">
+          <a class="card about" href="./about">
             <div class="card__header">
               <h5 class="card__heading">О центре</h5>
-              <a class="card__more" href="#"
+              <span class="card__more"
                 >Узнать больше
                 <span class="material-symbols-outlined">arrow_forward</span>
-              </a>
+              </span>
             </div>
             <p>
               Мы являемся фильтром для информации со всего мира и не должны
               допускать утечек отрицательной информации, чтобы до людей доходила
               только качественная и чистая информация
             </p>
-          </div>
-
+          </a>
           <a
             class="card showcase"
             href="https://youtu.be/QnTZX1u0dis"
@@ -159,23 +160,23 @@
             <span class="material-symbols-outlined">play_arrow</span>
             Смотреть showcase
           </a>
-          <div class="card faq">
+          <a class="card faq" href="./faq">
             <div class="card__header">
               <h5 class="card__heading">Руководство</h5>
             </div>
             <image class="card__illustration faq" src="./images/faq.png" />
-          </div>
-          <div class="card meetings">
+          </a>
+          <a class="card meetings" href="./meetings">
             <div class="card__header">
               <h5 class="card__heading">Собрания</h5>
             </div>
-          </div>
-          <div class="card merch">
+          </a>
+          <a class="card merch" href="./merch">
             <div class="card__header">
               <h5 class="card__heading">Униформа</h5>
             </div>
             <image class="card__illustration merch" src="./images/merch.png" />
-          </div>
+          </a>
         </div>
       </main>
       <footer>
