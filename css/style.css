@@ -103,8 +103,12 @@ body {
 
 .modal {
   max-height: 90dvh;
-  max-height: 100dvw;
+  max-width: 90dvw;
   border-radius: 16px;
+}
+
+.modal-container-poster {
+  z-index: 11;
 }
 
 .modal-info {
